@@ -375,7 +375,7 @@ public class PolyStar extends Application {
                     massInt[j] = rhoC * 4.0 * Math.PI * Math.pow(radInt[j], 3) / 3.0;
                     massShell[j] = massInt[j];
 
-                    if (tempShell[j] >= 1.0e7) {
+                    if (tempShell[j] >= PhysData.fusionPPTemp) {
                         epsPpShell[j] = Power.ppChain(tempShell[j], rhoShell[j], xFrac, zFrac); //H fusion p-p chain
                         epsCnoShell[j] = Power.cnoCycle(tempShell[j], rhoShell[j], xFrac, zFrac); //H fusion CNO cycle
                         epsShell[j] = epsPpShell[j] + epsCnoShell[j];
@@ -513,7 +513,7 @@ public class PolyStar extends Application {
                         massInt[i] = massInt[i - 1] + massShell[i];
                         //epsShell[i] = Power.nuclear(tempShell[i], rhoShell[i], xFrac, zFrac);
 
-                        if (tempShell[i] >= 1.0e7) {
+                        if (tempShell[i] >= PhysData.fusionPPTemp) {
                             iCore = i;
                             epsPpShell[i] = Power.ppChain(tempShell[i], rhoShell[i], xFrac, zFrac); //H fusion p-p chain
                             epsCnoShell[i] = Power.cnoCycle(tempShell[i], rhoShell[i], xFrac, zFrac); //H fusion CNO cycle

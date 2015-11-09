@@ -78,6 +78,14 @@ public class PhysData {
     public static double logEps0PP() {
         return Math.log(eps0PP);
     }
+    
+    //More realistic non-power law treatment:\
+    //C&) 2nd Ed., p. 311
+    public static double eps2PP = 0.241e4; //units consistent with ergs/g
+    public static double logEps2PP() {
+        return Math.log(eps2PP);
+    }    
+    
     //CNO cycle - H fusion catalyzed by Carbon, Nitrogen and Oxygen 
     public static double eps0CNO = 8.24e-24;  // ergs s^-1 cm^3 g^-2
     public static double betaCNO = 19.9; //T_6 exponent
@@ -85,10 +93,28 @@ public class PhysData {
     public static double logEps0CNO() {
         return Math.log(eps0CNO);
     }
-
+    
+    //More realistic non-power law treatment:\
+    //C&) 2nd Ed., p. 312  
+   public static double eps2CNO = 8.67e24;  // units consistent with ergs/g
+       public static double logEps2CNO() {
+        return Math.log(eps2CNO);
+    }
+       
+       //Triple alpha process for He fusion:
+       
+    //More realistic non-power law treatment:\
+    //C&) 2nd Ed., p. 312  
+   public static double eps2Ta = 50.9e4;  // units consistent with ergs/g
+       public static double logEps2Ta() {
+        return Math.log(eps2Ta);
+    }
+   
+    
     // threshold for H-fusion
     //C&O 2nd Ed., p. 302
-    public static double fusionTemp = 1.0e7; //K 
-
+    public static double fusionPPTemp = 1.0e7; //K 
+    //For Triple-alpha process He fusion - ??
+    public static double fusionTaTemp = 1.0e8; //K 
     //}
 }
